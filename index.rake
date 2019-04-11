@@ -2,13 +2,13 @@
 namespace :stdapp do
   # rake hello_with_args[afei,bash]
   desc "Make new release to remote."
-  task :make_release, [:target] do |task, args|
+  task :make_release, [:target_branch] do |task, args|
     args.with_defaults(
-      :target => "release",
+      :target_branch => "release",
     )
 
     current_branch = %x(git rev-parse --abbrev-ref HEAD).strip
-    target_branch = args[:target]
+    target_branch = args[:target_branch]
 
     # check latest relase files:
     sh "rm -rf release && cp -R dist release"
