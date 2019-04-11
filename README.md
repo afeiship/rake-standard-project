@@ -4,7 +4,6 @@
 ## deps
 ```rb
 # Gemfile
-gem 'fileutils'
 ```
 
 ## install
