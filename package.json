@@ -1,0 +1,17 @@
+{
+  "name": "rake-standard-project",
+  "version": "1.0.0",
+  "description": "Rake script for standard-project.",
+  "main": "index.rake",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afeiship/rake-standard-project.git"
+  },
+  "keywords": ["rake", "task"],
+  "author": "afei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afeiship/rake-standard-project/issues"
+  },
+  "homepage": "https://github.com/afeiship/rake-standard-project#readme"
+}
