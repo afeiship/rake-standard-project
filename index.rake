@@ -33,4 +33,9 @@ namespace :stdapp do
     sh "git add --all && git commit -m 'add: new release - #{version}' && git push"
     sh "git checkout #{current_branch}"
   end
+
+  desc "Rollback release to git hash version."
+  task :rollback, [:githash] do |task, args|
+    sh "git checkout #{args[:githash]}"
+  end
 end
