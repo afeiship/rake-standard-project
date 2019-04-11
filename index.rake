@@ -1,8 +1,13 @@
 # main task list:
 namespace :stdapp do
-  # rake hello_with_args[afei,bash]
-  desc "Make new release to remote."
-  task :make_release, [:target_branch] do |task, args|
+  desc "Make new release from dist."
+  task :make_release do
+    sh "rm -rf release && cp -R dist release"
+    sh "git add --all && git commit -m 'add: auto release' && git push"
+  end
+
+  desc "Commit new release to remote."
+  task :commit_release, [:target_branch] do |task, args|
     args.with_defaults(
       :target_branch => "release",
     )
