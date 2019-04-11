@@ -7,12 +7,12 @@
 gem 'fileutils'
 ```
 
-## install:
+## install
 ```bash
 npm i -S afeiship/rake-standard-project --registry=https://registry.npm.taobao.org
 ```
 
-## usage:
+## usage
 ~~~
 $ rake -T
 rake stdapp:commit[target_branch]  # Commit new release to remote
