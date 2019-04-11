@@ -9,10 +9,10 @@ namespace :stdapp do
 
     current_branch = %x(git rev-parse --abbrev-ref HEAD).strip
     target_branch = args[:target]
-    p current_branch
 
-    # sh "git checkout #{target_branch}"
-    # sh "rm -rf release"
-    # sh "git checkout #{current_branch} -- release"
+    # check latest relase files:
+    sh "git checkout #{target_branch}"
+    sh "rm -rf release"
+    sh "git checkout #{current_branch} -- release"
   end
 end
