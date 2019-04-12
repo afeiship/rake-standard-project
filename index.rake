@@ -38,4 +38,12 @@ namespace :stdapp do
   task :rollback, [:githash] do |task, args|
     sh "git checkout #{args[:githash]}"
   end
+
+  desc "Link release to target dir.(default source:'$PWD/release')"
+  task :link, [:target, :source] do |task, args|
+    args.with_defaults(
+      :source => "release",
+    )
+    sh "ln -s #{Dir.pwd}/#{args[:source]} #{args[:target]}"
+  end
 end
