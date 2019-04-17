@@ -28,6 +28,7 @@ namespace :stdapp do
     # check latest relase files:
     sh "rm -rf release && cp -R dist release"
     sh "git checkout #{target_branch}"
+    sh "git pull"
     sh "rm -rf release"
     sh "git checkout #{current_branch} -- release"
     sh "git add --all && git commit -m 'add: new release - #{version}' && git push"
