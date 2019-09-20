@@ -40,6 +40,7 @@ namespace :stdapp do
     sh "git checkout master"
     sh "git merge develop"
     sh "git checkout develop"
+    sh "git push"
   end
 
   desc "Rollback release to git hash version."
