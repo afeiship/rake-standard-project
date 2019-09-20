@@ -35,6 +35,13 @@ namespace :stdapp do
     sh "git checkout #{current_branch}"
   end
 
+  desc "Sync develop code to master"
+  task :sync do |task, args|
+    sh "git checkout master"
+    sh "git merge develop"
+    sh "git checkout develop"
+  end
+
   desc "Rollback release to git hash version."
   task :rollback, [:githash] do |task, args|
     sh "git checkout #{args[:githash]}"
